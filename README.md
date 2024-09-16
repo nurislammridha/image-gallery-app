@@ -2,6 +2,8 @@
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
+# Project setup instruction:
+
 ## Step 1: Clone Code
 
 First, you will need to clone code from this repository
@@ -59,7 +61,7 @@ After open App, Gallery page load with api data, a loader are showing when api c
 
 ### 02) Responsive design gallery page:
 
-    Gallery page is full responsive. Different wide of device and after rotation (widely) page are not break.
+    Gallery page is full responsive. Different wide of device and after rotation (widely) page are not broken.
 
 ![Gallery Page Top View](./assets/images/2_Gallery_Page_Top.png)  
 ![Gallery Page Middle View](./assets/images/3_Gallery_Page_Bottom.png)  
@@ -94,4 +96,4 @@ After open App, Gallery page load with api data, a loader are showing when api c
 
 # Builded App Link:
 
-[APP LINK](https://drive.google.com/file/d/1S21JVphyEnhPeee8MtY4SJ0t5OYjhCEF/view?usp=drive_link){:target="\_blank"}
+[APP LINK](https://drive.google.com/file/d/1S21JVphyEnhPeee8MtY4SJ0t5OYjhCEF/view?usp=drive_link)
