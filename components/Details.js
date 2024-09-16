@@ -10,19 +10,14 @@ import {
     Button,
     Dimensions,
     Image,
-    SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
     TouchableOpacity,
-    useColorScheme,
     View,
 } from 'react-native';
-import car from '../assets/images/car.jpg'
 const Details = ({ navigation, route }) => {
     const { title, url } = route?.params
-    // console.log('thumbnailUrl', thumbnailUrl)
     return (
         <ScrollView style={styles.container}>
             <View>
@@ -53,7 +48,7 @@ const Details = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#FAFAFA",
+        backgroundColor: "#FFF",
         paddingLeft: 5,
         paddingRight: 5
     },
@@ -64,7 +59,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         borderBottomWidth: 1,
         borderBottomColor: '#888',
-        paddingBottom: 10
+        paddingBottom: 10,
+        color: '#000'
     },
     imgContainer: {
         marginTop: 10
@@ -74,7 +70,8 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').width
     },
     text: {
-        marginTop: 10
+        marginTop: 10,
+        color: "#000"
     },
     btnCon: {
         marginTop: 10,

@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import postsSlice from "../../features/imageGallerySlice";
+import gallerySlice from "../../features/gallerySlice";
 
 // combine all of the reducers here
 const rootReducer = combineReducers({
-    posts: postsSlice
+    posts: gallerySlice
 });
 
 export default rootReducer;

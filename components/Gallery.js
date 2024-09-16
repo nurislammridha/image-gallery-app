@@ -9,31 +9,26 @@ import React, { useEffect, useState } from 'react';
 import {
     Alert,
     Image,
-    SafeAreaView,
     ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
     TextInput,
     TouchableOpacity,
-    useColorScheme,
     View,
 } from 'react-native';
 import car from '../assets/images/car.jpg'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts, offlineMode } from '../features/imageGallerySlice';
-import { useNetInfo, useNetInfoInstance } from '@react-native-community/netinfo';
-// import { getData, storeData } from '../assets/functions/helperFunctions';
+import { fetchPosts, offlineMode } from '../features/gallerySlice';
+import { useNetInfoInstance } from '@react-native-community/netinfo';
 import { MyActivityIndicator } from './MyActivityIndicator';
 import { getData, storeData } from '../assets/functions/helperFunctions';
-import AsyncStorage from '@react-native-community/async-storage';
-const ImageGallery = ({ navigation }) => {
+const Gallery = ({ navigation }) => {
     const [filter, setFilter] = useState("")
     const dispatch = useDispatch()
     const { netInfo: { type, isConnected }, refresh } = useNetInfoInstance();
     const data = useSelector(state => state.posts)
-    const { posts, isLoading, isError, error } = data || {}
-
+    const { posts, isLoading } = data || {}
+    //checking internet connection is on and api call or show data from storage
     useEffect(() => {
         if (isConnected !== null && !isConnected) {
             Alert.alert('You are offline. Data are showing from storage');
@@ -42,26 +37,16 @@ const ImageGallery = ({ navigation }) => {
             })
         } else {
             dispatch(fetchPosts())
-
         }
     }, [isConnected])
-
+    //after api call data store to async storage
     useEffect(() => {
         if (posts && posts.length > 0) {
             storeData(posts)
         }
 
     }, [posts])
-    // useEffect(() => {
-    //     const { details, isConnected, isInternetReachable } = netInfo
-    //     if (details !== null && !isConnected && !isInternetReachable) {
-    //         Alert.alert('You are offline. Data are showing from storage');
-    //     } else {
-    //         storeData(posts?.posts)
-    //     }
-    // }, [netInfo])
 
-    // console.log('netinfo', isConnected)
     return (
         <ScrollView style={styles.container}>
             <View>
@@ -99,7 +84,7 @@ const ImageGallery = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#FAFAFA",
+        backgroundColor: "#FFF",
         paddingLeft: 5,
         paddingRight: 5
     },
@@ -110,7 +95,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         borderBottomWidth: 1,
         borderBottomColor: '#888',
-        paddingBottom: 10
+        paddingBottom: 10,
+        color: '#000'
     },
     galleryContainer: {
         marginTop: 5,
@@ -138,7 +124,9 @@ const styles = StyleSheet.create({
     galleryImgTitle: {
         marginTop: 5,
         textAlign: 'center',
-        height: 20
+        height: 20,
+        color: "#000",
+        marginBottom: 5
     },
     input: {
         marginTop: 20,
@@ -153,4 +141,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ImageGallery;
+export default Gallery;
