@@ -51,7 +51,7 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-# Some highlighted technologies I used:
+# Some highlighted technologies I use:
 
 #### 01) React Native
 
