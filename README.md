@@ -51,6 +51,18 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
+# Some highlighted technologies I used:
+
+#### 01) React Native
+
+#### 02) Redux Toolkit (for state management)
+
+#### 03) Rect Navigation (for routing)
+
+#### 04) Netinfo (for getting all device network information)
+
+#### 05) Async Storage (for storing data for offline showing)
+
 # Output Features:
 
 ### 01) Loader:
